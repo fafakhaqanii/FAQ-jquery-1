@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #desc,
+      #header {
+        border: 1px solid gray;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">Lorem, ipsum dolor.</div>
+    <div id="desc">Lorem ipsum dolor sit amet.</div>
+    <span class="test">Lorem, ipsum dolor.</span>
+    <h1>hello</h1>
+    <h2>hiii guys</h2>
+    <p>Lorem, ipsum dolor.</p>
+    <button id="hide">hide</button>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script>
+      $(function () {
+        $("#hide").click(function () {
+          $("p").hide();
+        });
+        $("h1").mouseenter(function () {
+          $("h1").css("color", "red");
+        });
+        $("h1").mouseleave(function () {
+          $("h1").css("color", "blue");
+        });
+        $("h2").on({
+          mouseenter: function () {
+            $(this).css("background-color", "lightblue");
+          },
+          mouseleave: function () {
+            $(this).css("color", "darkblue");
+            $(this).css("background-color", "white");
+          },
+
+          click: function () {
+            $(this).css("color", "darkgreen");
+          },
+        });
+        $(".test").hover(
+          function () {
+            $(this).css("background-color", "lightgreen");
+            $(this).css("color", "green");
+          },
+          function () {
+            $(this).css("color", "white");
+            $(this).css("background-color", "gray");
+          }
+        );
+        $("#header").click(function () {
+          $("#desc").toggle(1000);
+        });
+      });
+    </script>
+  </body>
+</html>

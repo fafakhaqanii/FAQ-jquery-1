@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #q1,
+      #q2,
+      #q3 {
+        display: inline-block;
+        padding: 10px 20px;
+        border: lid solid gray;
+        border-radius: 30px;
+        cursor: pointer;
+      }
+
+      #box,
+      #box1,
+      #box2 {
+        border: 1px solid gray;
+        padding: 10px 20px;
+        width: 50%;
+        margin: auto;
+      }
+
+      #header,
+      #header1,
+      #header2 {
+        color: red;
+        border: 1px solid gray;
+        padding: 10px;
+        border-radius: 20px;
+        text-align: center;
+        position: relative;
+      }
+
+      #desc,
+      #desc1,
+      #desc2 {
+        color: green;
+        padding: 10px 20px;
+        text-align: center;
+        display: none;
+      }
+      span {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+      #minus {
+        display: none;
+        color: green;
+      }
+      #minus1 {
+        display: none;
+        color: green;
+      }
+      #plus {
+        color: red;
+      }
+      #plus1 {
+        color: red;
+      }
+      .question {
+        display: flex;
+        margin: 10px;
+        justify-content: space-evenly;
+        width: 50%;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 20px">
+      <div class="question">
+        <div id="q1">FAQ1</div>
+        <div id="q2">FAQ1</div>
+        <div id="q3">FAQ3</div>
+      </div>
+      <br /><br />
+      <div id="box">
+        <div>
+          <h2 id="header">
+            Lorem ipsum dolor sit amet?
+            <span id="minus"
+              ><i class="fa fa-minus-circle" aria-hidden="true"></i
+            ></span>
+            <span id="plus"
+              ><i class="fa fa-plus-circle" aria-hidden="true"></i
+            ></span>
+
+            <p id="desc">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab
+              aliquid repellat, veritatis
+            </p>
+          </h2>
+        </div>
+      </div>
+      <div id="box1">
+        <div>
+          <h2 id="header1">
+            Lorem ipsum dolor sit amet?
+            <span id="minus1"
+              ><i class="fa fa-minus-circle" aria-hidden="true"></i
+            ></span>
+            <span id="plus1"
+              ><i class="fa fa-plus-circle" aria-hidden="true"></i
+            ></span>
+
+            <p id="desc1">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab
+              aliquid repellat, veritatis
+            </p>
+          </h2>
+        </div>
+      </div>
+      <div id="box2">
+        <div>
+          <h2 id="header2">
+            Lorem ipsum dolor sit amet?
+            <span id="minus2"
+              ><i class="fa fa-minus-circle" aria-hidden="true"></i
+            ></span>
+            <span id="plus2"
+              ><i class="fa fa-plus-circle" aria-hidden="true"></i
+            ></span>
+
+            <p id="desc2">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab
+              aliquid repellat, veritatis
+            </p>
+          </h2>
+        </div>
+      </div>
+    </div>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script>
+      $(function () {
+        $("#q1")
+          .css("background-color", "darkgray")
+          .css("color", "white")
+          .click(
+            function () {
+              $("#q1")
+                .css("color", "darkgray")
+                .css("background-color", "lightgray");
+            },
+            function () {
+              $("#box").fadeToggle(1000);
+            }
+          );
+        $("#header").click(function () {
+          $("#desc").slideToggle(1000);
+          $("#minus").toggle();
+          $("#plus").toggle();
+        });
+        ////
+        $("#q2")
+          .css("background-color", "darkgray")
+          .css("color", "white")
+          .click(
+            function () {
+              $("#q2")
+                .css("color", "darkgray")
+                .css("background-color", "lightgray");
+            },
+            function () {
+              $("#box1").fadeToggle(1000);
+            }
+          );
+        $("#header1").click(function () {
+          $("#desc1").slideToggle(1000);
+          $("#minus1").toggle();
+          $("#plus1").toggle();
+        });
+        ///
+        $("#q3")
+          .css("background-color", "darkgray")
+          .css("color", "white")
+          .click(
+            function () {
+              $("#q3")
+                .css("color", "darkgray")
+                .css("background-color", "lightgray");
+            },
+            function () {
+              $("#box2").fadeToggle(1000);
+            }
+          );
+        $("#header2").click(function () {
+          $("#desc2").slideToggle(1000);
+          $("#minus2").toggle();
+          $("#plus2").toggle();
+        });
+      });
+    </script>
+  </body>
+</html>
